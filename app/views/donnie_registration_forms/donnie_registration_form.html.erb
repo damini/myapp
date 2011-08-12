@@ -1,0 +1,320 @@
+
+<html>
+<head>
+<title>Donnie Registration Form</title>
+<script type="text/javascript">
+
+function passwordStrength(password)
+
+{
+
+        var desc = new Array();
+
+        desc[0] = "Very Weak";
+
+        desc[1] = "Weak";
+
+        desc[2] = "Better";
+
+        desc[3] = "Medium";
+
+        desc[4] = "Strong";
+
+        desc[5] = "Strongest";
+
+
+
+        var score   = 0;
+
+
+
+        //if password bigger than 6 give 1 point
+
+        if (password.length > 6) score++;
+
+
+
+        //if password has both lower and uppercase characters give 1 point      
+
+        if ( ( password.match(/[a-z]/) ) && ( password.match(/[A-Z]/) ) ) score++;
+
+
+
+        //if password has at least one number give 1 point
+
+        if (password.match(/\d+/)) score++;
+
+
+
+        //if password has at least one special caracther give 1 point
+
+        if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) score++;
+
+
+
+        //if password bigger than 12 give another 1 point
+
+        if (password.length > 12) score++;
+
+
+
+         document.getElementById("passwordDescription").innerHTML = desc[score];
+
+         document.getElementById("passwordStrength").className = "strength" + score;
+
+}
+
+$(function(){
+		$("#yourbutton").buttonCaptcha({
+			codeWord:5,
+			codeZone:false,
+			verifyMustBe:true,
+			verifyMustName:'codeWordReal'	
+		});
+	});
+
+</script>
+
+</head>
+<body>
+<div id="form2" style="text-align:left;height:250px;width:1000px;">
+<h1> Donnie Registration Form </h1>
+
+<pre>
+
+Read the following instructions carefully:
+
+1. Only registered members can donate goods and services to various NGO's through this portal.
+2. To become a member complete the form below.This process is simple and takes a few minutes.
+3. Details are necessary for a secure donation process. They will kept confidential.
+4. You will be provided with a dashboard after the registration process is complete.
+5. The complete registration proces is carried out in two steps in which the second step is creating a profile
+   which can be conducted afterwards.
+6. Fields Marked with asterisk are mandatory.
+7. You can unsubscribe any time.
+</pre>
+</div>
+
+<% form_for(@form2) do |f| %>
+<% if @form2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@form2.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @form2.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h2><u>Identity</u></h2>
+<div class="field">
+       <input id="donnie_registration_form_identity" name="donnie_registration_form[identity]" type="checkbox" checked="true" /> 
+       <label for="donnie_registration_form_identity">Individual</label>
+</div>
+<div class="field">
+    <input id="donnie_registration_form_check2_prakalp" name="donnie_registration_form[check2_prakalp]" type="checkbox" /> 
+    <label for="donnie_registration_form_check2_prakalp">Prakalp</label>
+</div>
+<div class="field">
+    <input id="donnie_registration_form_check3_ngo" name="donnie_registration_form[check3_ngo]" type="checkbox" /> 
+    <label for="donnie_registration_form_check3_ngo">NGO</label>
+</div>
+<div class="field">
+        <input id="donnie_registration_form_check4_organization" name="donnie_registration_form[check4_organization]" type="checkbox" /> 
+        <label for="donnie_registration_form_check4_organization">Individual</label>
+</div>
+<div class="field">
+    <label for="donnie_registration_form_name">Name*</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input id="donnie_registration_form_name" name="donnie_registration_form[name]" size="20" type="text" style=" font-style:italic;" value="Type the name" title="Enter the complete name" class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/> 
+ </div>
+<div class="field">
+    <label for="donnie_registration_form_user_name">User Name*</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input id="donnie_registration_form_user_name" name="donnie_registration_form[user_name]" size="20" type="text" style=" font-style:italic;" value="Psevagram" title="Should start with 'P'. It will be used to address you on your dashboard." class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/>    <input type="button" value="check" title="Check the availability of your User Name." class="vtip"/><br/>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(place a 'P' before your user name)
+</div>
+<div class="field">
+     <label for="donnie_registration_form_email">Email ID*</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	 <input id="donnie_registration_form_email" name="donnie_registration_form[email]" size="30" type="text" style="font-style:italic;" value="sample1@yahoo.com" title="Enter your working Email id" class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/>
+</div>
+<div class="field">
+     <label for="donnie_registration_form_contact_no">Contact Number*</label> &nbsp; &nbsp; &nbsp;  
+	 <input id="donnie_registration_form_contact_no" name="donnie_registration_form[contact_no]" size="30" type="text" style="font-style:italic;" value="Telephone Number" title="Enter Telephone Number with STD code of your area eg. 0********** or 011******** " class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/>
+</div>
+<div class="field">
+     <label for="donnie_registration_form_password">Password*</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+     <input id="donnie_registration_form_password" name="donnie_registration_form[password]" size="10" type="password" style="font-style:italic;" onkeyup="passwordStrength(this.value)" title="Enter a sutable password. Minimum of 8 characters in length"  class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/>
+ </div>
+ <div id="passwordDescription">Password not entered</div>     <div id="passwordStrength" class="strength0"></div>
+<br />
+<div class="field">
+     <label for="donnie_registration_form_confirm_password">Confirm Password*</label> &nbsp;
+     <input id="donnie_registration_form_confirm_password" name="donnie_registration_form[confirm_password]" size="10" type="password" style=" font-style:italic;" title="Retype your password" class="vtip"/>
+</div><br/>
+<u>Categories:</u><br /><br />
+<div class="field" style="height:150px; width:200px; overflow:auto; border:black;">
+       <input id="donnie_registration_form_category" name="donnie_registration_form[category]" type="checkbox" checked="true" /> 
+       <label for="donnie_registration_form_category">Care</label><br/>
+
+	   <input id="donnie_registration_form_category_children" name="donnie_registration_form[category_children]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_children">Children</label><br/>
+
+	   <input id="donnie_registration_form_category_disabled" name="donnie_registration_form[category_disabled]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_disabled">Disabled</label><br/>
+       
+	   <input id="donnie_registration_form_category_dualit_lite" name="donnie_registration_form[category_dualit_lite]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_dualit_lite">Dualit Lite</label><br/>
+
+	   <input id="donnie_registration_form_category_education" name="donnie_registration_form[category_education]" type="checkbox"/> 
+       <label for="donnie_registration_form_category_education">Education</label><br/>
+
+	   <input id="donnie_registration_form_category_elderly" name="donnie_registration_form[category_elderly]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_elderly">Elderly</label><br/>
+
+	   <input id="donnie_registration_form_category_employment" name="donnie_registration_form[category_employment]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_employment">Employment</label><br/>
+
+	   <input id="donnie_registration_form_category_health" name="donnie_registration_form[category_health]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_health">Health</label><br/>
+
+	   <input id="donnie_registration_form_category_human_right" name="donnie_registration_form[category_human_right]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_humen_right">Human Right</label><br/>
+
+	   <input id="donnie_registration_form_category_sanskar" name="donnie_registration_form[category_sanskar]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_sanskar">Sanskar</label><br/>
+
+	   <input id="donnie_registration_form_category_self_employment" name="donnie_registration_form[category_self_employment]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_self_employment">Self Employment</label><br/>
+
+	   <input id="donnie_registration_form_category_swawlamban" name="donnie_registration_form[category_swawlamban]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_swawlamban">Swawlamban</label><br/>
+
+	   <input id="donnie_registration_form_category_women" name="donnie_registration_form[category_women]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_women">Women</label><br/>
+
+	   <input id="donnie_registration_form_category_youth" name="donnie_registration_form[category_youth]" type="checkbox" /> 
+       <label for="donnie_registration_form_category_youth">Youth</label>
+</div><br/>
+
+<u>Items Required:</u><br />
+<div class="field" style="height:150px; width:200px; overflow:auto;">
+       <input id="donnie_registration_form_item" name="donnie_registration_form[item]" type="checkbox" checked="true" /> 
+       <label for="donnie_registration_form_item">Antiseptic</label><br/>
+       
+	   <input id="donnie_registration_form_item_bag" name="donnie_registration_form[item_bag]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_bag">Bags</label><br/>
+
+	   <input id="donnie_registration_form_item_bedsheet" name="donnie_registration_form[item_bedsheet]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_bedsheet">Bedsheet</label><br/>
+
+	   <input id="donnie_registration_form_item_blanket" name="donnie_registration_form[item_blanket]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_blanket">Blankets</label><br/>
+	
+	   <input id="donnie_registration_form_item_book" name="donnie_registration_form[item_book]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_book">Books</label><br/>
+
+	   <input id="donnie_registration_form_item_cloth" name="donnie_registration_form[item_cloth]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_cloth">Clothes</label><br/>
+
+	   <input id="donnie_registration_form_item_computer_and_laptop" name="donnie_registration_form[item_computer_and_laptop]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_computer_and_laptops">Computers And Laptops</label><br/>
+
+	   <input id="donnie_registration_form_item_curtain" name="donnie_registration_form[item_curtain]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_curtain">Curtains</label><br/>
+
+	   <input id="donnie_registration_form_item_cycle" name="donnie_registration_form[item_cycle]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_cycle">Cycles</label><br/>
+
+	   <input id="donnie_registration_form_item_electronic" name="donnie_registration_form[item_electronic]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_electronic">Electronic</label><br/>
+
+	   <input id="donnie_registration_form_item_furniture" name="donnie_registration_form[item_furniture]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_furniture">Furniture</label><br/>
+
+	   <input id="donnie_registration_form_item_game" name="donnie_registration_form[item_game]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_game">Games</label><br/>
+
+	   <input id="donnie_registration_form_item_kitchen_item" name="donnie_registration_form[item_kitchen_item]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_kitchen_item">Kitchen Items</label><br/>
+
+	   <input id="donnie_registration_form_item_mat" name="donnie_registration_form[item_mat]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_mat">Mats</label><br/>
+
+	   <input id="donnie_registration_form_item_medical_equipment" name="donnie_registration_form[item_medical_equipment]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_medical_equipment">Medical Equipments</label><br/>
+
+	   <input id="donnie_registration_form_item_medicine" name="donnie_registration_form[item_medicine]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_medicine">Medicines</label><br/>
+
+	   <input id="donnie_registration_form_item_money" name="donnie_registration_form[item_money]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_money">Money</label><br/>
+
+	   <input id="donnie_registration_form_item_personal_care" name="donnie_registration_form[item_personal_care]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_personal_care">Personal Care</label><br/>
+
+	   <input id="donnie_registration_form_item_raw_food" name="donnie_registration_form[item_raw_food]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_raw_food">Raw Food</label><br/>
+
+	   <input id="donnie_registration_form_item_stationery" name="donnie_registration_form[item_stationery]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_stationery">Stationery</label><br/>
+
+	   <input id="donnie_registration_form_item_stitching_machine" name="donnie_registration_form[item_stitching_machine]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_stitching_machine">Stitching Machine</label><br/>
+
+	   <input id="donnie_registration_form_item_utensil" name="donnie_registration_form[item_utensil]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_utensil">Utensils</label><br/>
+
+	   <input id="donnie_registration_form_item_vehicle" name="donnie_registration_form[item_vehicle]" type="checkbox"/> 
+       <label for="donnie_registration_form_item_vehicle">Vehicles</label><br/>
+</div><br/>
+
+<div class="field">
+     <label for="donnie_registration_form_pincode">Pincode*</label> &nbsp; &nbsp; &nbsp;  
+	 <input id="donnie_registration_form_pincode" name="donnie_registration_form[pincode]" size="20" type="text" style="font-style:italic;" value="Pincode of Your Area" title="Enter Pincode of Your Area like 110001" class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/>
+</div><br/>
+
+<div class="field">
+<label id="donnie_registration_form_label" name="donnie_registration_form[label]">Click on the "<u>Are you a robot?</u>" link below to fill security code.</label>
+<label for="yourbutton" name="donnie_registration_form[yourbutton]">Unlocked!</label>
+<input id="yourbutton" name="donnie_registration_form[yourbutton]" type="radio" checked="true"/>
+</div>
+<input type="checkbox" checked="checked"  id="donnie_registration_form_check" name="message" /> I agree to recieve updates and reminders from CONTRIBUTE FOR A CAUSE. <br/>
+
+   <b>By clicking the 'Submit' button below, I certify that I have read and agree to 
+   our <a href="termsofservice.html">Terms of Service</a>,our<a href="privacypolicy.html"> Privacy Policy </a>and <a href="communication terms of service">Communication Terms of Service</a>, and to 
+   receive account related communications from Us! electronically.</b><br/>
+                    
+
+  <div class="actions" width="50" style="float: left;" >
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input id="donnie_registration_form_submit" name="commit" type="submit" value="Submit" />   
+  </div>
+<div class="field" width="50" style="float: left;"> &nbsp; &nbsp; &nbsp;<input type="reset" value="Clear" id="donnie_registration_form_reset" name="button" title="click here to fill the form again" class="vtip"/></div><br/><br/>
+
+<div id="field">
+<label>On Submittingh the form, you will receive an e-mail in your inbox or your spam folder. 
+Click on the confirmation link to varify your email address.</label>
+</div><br/>
+
+<% end %>
+
+<div id="division4ads" style="text-align:left;height:200px;width:1000px;">
+    
+   <div id="Ad1" style="background-color:dimgray;height:200px;width:300px;float:left;">Advertisement 1
+   <img src="C:\Documents and Settings\user\My Documents\My Pictures\image3.png" height="200" width="300"/>
+   </div>
+   <div id="Ad2" style="background-color:thistle;height:200px;width:400px;float:left;">Advertisement 2
+   <img src="C:\Documents and Settings\user\My Documents\My Pictures\image2.jpg" height="190" width="400"/></div>
+   <div id="Ad3" style="background-color:rosybrown;height:200px;width:300px;float:left;">Advertisement 3
+   <img src="C:\Documents and Settings\user\My Documents\My Pictures\image4.jpg" height="190" width="300"/></div>
+    
+</div> 
+
+<div id="division5footer" style="text-align:left;height:40px;width:1000px;">
+copyright@2011DonatetoPeople.org. All Rights Reserved <a href="disclaimer"> Disclaimer</a> <a href="sitemap"> Sitemap</a>
+</div> 
+
+</div>
+
+</body>
+</html>

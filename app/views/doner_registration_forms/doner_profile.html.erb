@@ -1,0 +1,365 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Doner Profile</title>
+<script type="text/javascript" src="./jquery.js"></script>
+<script type="text/javascript" src="./vtip.js"></script>
+<link rel="stylesheet" type="text/css" href="css/vtip.css" />
+</head>
+<body>
+<h1>Registration Step 2 of 2: Create your profile</h1>
+
+<u>Personal Details:</u><br />
+<form name='donerprofile' action='insert3.php' method='post' accept-charset='UTF-8'>
+<br />Date Of Birth * (DD/MM/YYYY)<br /> 
+<br/>
+<select id="12" name="date" style="float:left;" title="Select your birthday date" class="vtip">
+<option>select</option>
+<option>01</option> 
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option>05</option>
+<option>06</option>
+<option>07</option>
+<option>08</option>
+<option>09</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+<option>21</option>
+<option>22</option>
+<option>23</option>
+<option>24</option>
+<option>25</option>
+<option>26</option>
+<option>27</option>
+<option>28</option>
+<option>29</option>
+<option>30</option>
+<option>31</option>
+</select>
+                         <select id="13" name="month" title="Select your b'day month" class="vtip"/>
+<option>select</option>
+<option>01</option>
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option>05</option>
+<option>06</option>
+<option>07</option>
+<option>08</option>
+<option>09</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+</select>
+                      <select id="14" name="year" title="Select your b'day year" class="vtip" >
+<option>select</option>
+<option>1950</option>
+<option>1951</option>
+<option>1952</option>
+<option>1953</option>
+<option>1954</option>
+<option>1955</option>
+<option>1956</option>
+<option>1957</option>
+<option>1958</option>
+<option>1959</option>
+<option>1960</option>
+<option>1961</option>
+<option>1962</option>
+<option>1963</option>
+<option>1964</option>
+<option>1965</option>
+<option>1966</option>
+<option>1967</option>
+<option>1968</option>
+<option>1969</option>
+<option>1970</option>
+<option>1971</option>
+<option>1972</option>
+<option>1973</option>
+<option>1974</option>
+<option>1975</option>
+<option>1976</option>
+<option>1977</option>
+<option>1978</option>
+<option>1979</option>
+<option>1980</option>
+<option>1981</option>
+<option>1982</option>
+<option>1983</option>
+<option>1984</option>
+<option>1985</option>
+<option>1986</option>
+<option>1987</option>
+<option>1988</option>
+<option>1989</option>
+<option>1990</option>
+<option>1991</option>
+<option>1992</option>
+<option>1993</option>
+<option>1994</option>
+<option>1995</option>
+<option>1996</option>
+<option>1997</option>
+<option>1998</option>
+<option>1999</option>
+<option>2000</option>
+<option>2001</option>
+<option>2002</option>
+<option>2003</option>
+<option>2004</option>
+<option>2005</option>
+<option>2006</option>
+<option>2007</option>
+<option>2008</option>
+<option>2009</option>
+<option>2010</option>
+<option>2011</option>
+<option>2012</option>
+<option>2013</option>
+<option>2014</option>
+<option>2015</option>
+<option>2016</option>
+<option>2017</option>
+<option>2018</option>
+<option>2019</option>
+<option>2020</option>
+<option>2021</option>
+<option>2022</option>
+<option>2023</option>
+<option>2024</option>
+<option>2025</option>
+<option>2026</option>
+<option>2027</option>
+<option>2028</option>
+<option>2029</option>
+<option>2030</option>
+<option>2031</option>
+<option>2032</option>
+<option>2033</option>
+<option>2034</option>
+<option>2035</option>
+<option>2036</option>
+<option>2037</option>
+<option>2038</option>
+<option>2039</option>
+<option>2040</option>
+<option>2041</option>
+<option>2042</option>
+<option>2043</option>
+<option>2044</option>
+<option>2045</option>
+<option>2046</option>
+<option>2047</option>
+<option>2048</option>
+<option>2049</option>
+<option>2050</option>
+</select><br /><br />
+Gender : <input id="15" type="radio" name="Gender" value="Male" checked="checked" tabindex="1" /><label for="GenderMale">Male</label><input id="16" type="radio" name="Gender" value="Female" tabindex="1" /><label for="GenderFemale">Female</label>
+<br />
+<br />
+Address *    <input type="text" id="17" name="address" maxlength="30" size="30" value="type your address" title="enter your address" class="vtip" /><br /><br  />
+             City:&nbsp;&nbsp;<input type="text" id="19" name="city" maxlength="20"title="Enter your city" class="vtip" />&nbsp;
+             State:&nbsp;&nbsp;<input type="text" id="20" name="state" maxlength="20"title="Enter your state" class="vtip" />&nbsp;
+             Country:&nbsp;<input type="text" id="21" name="country" maxlength="20" title="Enter your country" class="vtip"/> 
+
+<br /><br />Contact No. *&nbsp;<input type="text" id="22" name="stdcode" maxlength="5" size="5"title="Enter your std code" class="vtip"/>&nbsp;<input type="text" id="23" name="number" maxlength="10" title="Enter your number" class="vtip" /><br />
+
+<br/>Website <input type="text" name="website1" id="100" maxlength="40" size="30" value="Enter your website if any" title="Enter your valid website ID if any" class="vtip" /><a href="">Add More</a></br />
+<input type="text" name="website2" id="Text1" maxlength="40" size="30" /><br/><br/> 
+<br/>Hobbies :<br/><br/>
+<input type="text" name="hobby1" id="Text2" maxlength="40" size="30" /> <a href="#">Add More</a><br /><br />
+<input type="text" name="hobby2" id="Text3" maxlength="40" size="30" /><a href="#">Add More</a>
+<br /><br /><u>Education And Working:</u><br /><br />
+
+<u>Category:</u><br /><br />
+<div id="ScrollCB" style="height:150px; width:200px; overflow:auto;">
+<input type="checkbox" id="24" name="category1[]" value="student"/>Student<br />                      
+<input type="checkbox" id="28" name="category1[]"value="Business Man"/>Business Man<br />
+<input type="checkbox" id="25" name="category1[]"value="Under 18"/>Under 18<br />                     
+<input type="checkbox" id="29" name="category1[]"value="Working Senior Citizen"/>Working Senior Citizen<br />
+<input type="checkbox" id="26" name="category1[]"value="Above 18"/>Above 18<br />                    
+<input type="checkbox" id="30" name="category1[]"value="Retired Senior Citizen"/>Retired Senior Citizen<br />
+<input type="checkbox" id="27" name="category1[]"value="Service Man"/>Service Man<br />
+</div>                  
+<input type="checkbox" id="30" name="category8"/>others    <input type="text" name="other category" id="Text2" maxlength="40" size="30" />
+
+
+
+<br /><br />
+
+<u>Education Level:</u><br /><br />
+<div id="ScrollCB" style="height:150px; width:200px; overflow:auto;">
+<input type="checkbox" id="Checkbox1" name="education[]" value="Associate Degree"/>Associate Degree<br />                     
+<input type="checkbox" id="Checkbox7" name="education[]" value="Bachelors"/>Bachelors<br />
+<input type="checkbox" id="Checkbox2" name="education[]" value="Diploma"/>Diploma<br />                              
+<input type="checkbox" id="Checkbox8" name="education[]" value="Doctorate   Trade School"/>Doctorate   Trade School<br />
+<input type="checkbox" id="Checkbox3" name="education[]" value="Honours Degree"/> Honours Degree<br />                      
+<input type="checkbox" id="Checkbox9" name="education[]" value="High School"/>High School<br />
+<input type="checkbox" id="Checkbox4" name="education[]" value="Less Than High School"/>Less Than High School<br />                
+<input type="checkbox" id="Checkbox10" name="education[]" value=" Masters"/> Masters<br />
+<input type="checkbox" id="Checkbox5" name="education[]" value="Self Education"/>Self Education<br />                       
+<input type="checkbox" id="Checkbox11" name="education[]" value="Undergraduate"/>Undergraduate<br />
+</div>
+<input type="checkbox" id="Checkbox6" name="Education5"/>others     <input type="text" name="other category" id="Text2" maxlength="40" size="30" />
+
+
+
+
+
+
+
+<br /><u>Education Field:</u><br /><br />
+<div id="ScrollCB" style="height:150px; width:200px; overflow:auto;">
+<input type="checkbox" id="Checkbox12" name="educationf[]" value="Advertising/Marketing" />Advertising/Marketing<br />        
+<input type="checkbox" id="Checkbox13" name="educationf[]" value="Administratie Services"/>Administratie Services<br />   
+<input type="checkbox" id="Checkbox14" name="educationf[]" value=""/>Agricultur<br />                   
+<input type="checkbox" id="Checkbox15" name="educationf[]" value="Architechture"/>Architechture<br />
+<input type="checkbox" id="Checkbox16" name="educationf[]" value="Armed Forces"/>Armed Forces<br />                 
+<input type="checkbox" id="Checkbox17" name="educationf[]" value="Arts"/>Arts<br />                     
+<input type="checkbox" id="Checkbox18" name="educationf[]" value="Business Studies"/>Business Studies<br />             
+<input type="checkbox" id="Checkbox19" name="educationf[]" value="Commerce"/>Commerce<br />
+<input type="checkbox" id="Checkbox20" name="educationf[]" value="Communication"/>Communication<br />                
+<input type="checkbox" id="Checkbox21" name="educationf[]" value="Computers"/>Computers<br />                
+<input type="checkbox" id="Checkbox22" name="educationf[]" value="Education"/>Education<br />                    
+<input type="checkbox" id="Checkbox23" name="educationf[]" value="Engineering"/>Engineering<br />
+<input type="checkbox" id="Checkbox24" name="educationf[]" value="Ehics"/>Ehics<br />                        
+<input type="checkbox" id="Checkbox25" name="educationf[]" value="Environment"/>Environment<br />              
+<input type="checkbox" id="Checkbox26" name="educationf[]" value="Fashion"/>Fashion<br />                      
+<input type="checkbox" id="Checkbox27" name="educationf[]"value="Finance" />Finance<br />
+<input type="checkbox" id="Checkbox28" name="educationf[]" value="Fine Arts"/>Fine Arts<br />                    
+<input type="checkbox" id="Checkbox29" name="educationf[]" value="Forensic"/>Forensic<br />                 
+<input type="checkbox" id="Checkbox30" name="educationf[]" value="Health"/>Health<br />                       
+<input type="checkbox" id="Checkbox31" name="educationf[]" value="History"/>History<br />
+<input type="checkbox" id="Checkbox32" name="educationf[]" value="Home science"/>Home science<br />                 
+<input type="checkbox" id="Checkbox33" name="educationf[]" value="Hospitality"/>Hospitality<br />              
+<input type="checkbox" id="Checkbox34" name="educationf[]" value="Law"/>Law<br />                          
+<input type="checkbox" id="Checkbox35" name="educationf[]" value="Languages"/>Languages<br />
+<input type="checkbox" id="Checkbox37" name="educationf[]" value="Life Sciences"/>Life Sciences<br />                
+<input type="checkbox" id="Checkbox36" name="educationf[]" value="Management"/>Management<br />               
+<input type="checkbox" id="Checkbox38" name="educationf[]" value="Medicine"  />Medicine<br />                     
+<input type="checkbox" id="Checkbox39" name="educationf[]" value="Nursing"/>Nursing<br />
+<input type="checkbox" id="Checkbox40" name="educationf[]" value="Office Administration"/>Office Administration<br />        
+<input type="checkbox" id="Checkbox41" name="educationf[]" value="Science"/>Science<br />                
+<input type="checkbox" id="Checkbox42" name="educationf[]" value="Shipping"/>Shipping<br />                     
+<input type="checkbox" id="Checkbox43" name="educationf[]" value="Travel and Tourism"/>Travel and Tourism<br />
+</div><br />
+<input type="checkbox" id="Checkbox43" name="education44"/>other       <input type="text" name="other category" id="Text2" maxlength="40" size="30" />
+
+
+<br /><u> Working In :</u> <br /><br />
+<div id="ScrollCB" style="height:150px; width:200px; overflow:auto;">
+<input type="checkbox" id="Checkbox44" name="educationw[]" value="Accounting, Banking And Management"/>Accounting, Banking And Management<br />         
+<input type="checkbox" id="Checkbox50" name="educationw[]" value="Administration And HRArtists And Animators"/>Administration And HRArtists And Animators<br />
+<input type="checkbox" id="Checkbox51" name="educationw[]" value="Advertising Media And Entertainment"/>Advertising Media And Entertainment<br />        
+<input type="checkbox" id="Checkbox55" name="educationw[]" value="AgricultureBeauty Fashion And Jewellery Designers"/> AgricultureBeauty Fashion And Jewellery Designers<br />
+<input type="checkbox" id="Checkbox52" name="educationw[]" value="Airline Aviation  Education And Training"/>Airline Aviation  Education And Training<br />   
+<input type="checkbox" id="Checkbox46" name="educationw[]" value="Architechture And Design"/>Architechture And Design<br />
+<input type="checkbox" id="Checkbox53" name="educationw[]" value="BPO, KPO And Customer Support"/>BPO, KPO And Customer Support<br />              
+<input type="checkbox" id="Checkbox45" name="educationw[]" value="Civil Services And Law Enforcement"/>Civil Services And Law Enforcement<br />
+<input type="checkbox" id="Checkbox54" name="educationw[]" value="Corporate Professionals"/>Corporate Professionals<br />                    
+<input type="checkbox" id="Checkbox47" name="educationw[]" value="Defense"/>Defense<br />  
+<input type="checkbox" id="Checkbox48" name="educationw[]" value="Engineering"/>Engineering<br />                                
+<input type="checkbox" id="Checkbox49" name="educationw[]" value="Hotel And Hospitality"/>Hotel And Hospitality<br />
+<input type="checkbox" id="Checkbox56" name="educationw[]" value="IT And Software Engineering"/>IT And Software Engineering<br />                
+<input type="checkbox" id="Checkbox58" name="educationw[]" value="Legal"/>Legal<br />
+<input type="checkbox" id="Checkbox57" name="educationw[]" value="Medical And Health Care"/>Medical And Health Care<br />                    
+<input type="checkbox" id="Checkbox59" name="educationw[]" value="merchant Navy"/>merchant Navy<br />
+<input type="checkbox" id="Checkbox60" name="educationw[]" value="Sales And Marketing"/>Sales And Marketing<br />                        
+<input type="checkbox" id="Checkbox61" name="educationw[]" value="Science"/>Science<br />
+</div><br />
+<input type="checkbox" id="Checkbox62" name="education60"/>others     <input type="text" name="other category" id="Text2" maxlength="40" size="30" />                
+</pre>
+
+<br/><br/><br/><u>Working As:</u><br /><br />
+<div id="ScrollCB" style="height:150px; width:200px; overflow:auto;">
+<input type="checkbox" id="Checkbox66" name="educationa[]" value="Architect"/>Architect<br />                 
+<input type="checkbox" id="Checkbox67" name="educationa[]" value="Animater"/>Animater<br />            
+<input type="checkbox" id="Checkbox68" name="educationa[]" value="Charted Accountant"/>Charted Accountant<br />         
+<input type="checkbox" id="Checkbox69" name="educationa[]" value="Clerk"/>Clerk<br />                     
+<input type="checkbox" id="Checkbox70" name="educationa[]" value="College Student"/>College Student<br />     
+<input type="checkbox" id="Checkbox71" name="educationa[]" value="Company Secretary"/>Company Secretary<br />   
+<input type="checkbox" id="Checkbox72" name="educationa[]" value="Dentist"/>Dentist<br />                   
+<input type="checkbox" id="Checkbox73" name="educationa[]" value="Doctor"/>Doctor<br />              
+<input type="checkbox" id="Checkbox74" name="educationa[]" value="Entrepreneur"/>Entrepreneur<br />                 
+<input type="checkbox" id="Checkbox75" name="educationa[]" value="Executive"/>Executive<br />           
+<input type="checkbox" id="Checkbox78" name="educationa[]" value="Fashion Designer"/>Fashion Designer<br />
+<input type="checkbox" id="Checkbox76" name="educationa[]" value="Graphics Designer"/>Graphics Designer<br />         
+<input type="checkbox" id="Checkbox77" name="educationa[]" value="Engineer"/>Engineer<br />            
+<input type="checkbox" id="Checkbox79" name="educationa[]" value="Manager"/>Manager<br />
+<input type="checkbox" id="Checkbox80" name="educationa[]" value="News reporter"/>News reporter<br />             
+<input type="checkbox" id="Checkbox81" name="educationa[]" value="Pilot"/>Pilot<br />             
+<input type="checkbox" id="Checkbox82" name="educationa[]" value="Pharmist"/>Pharmist<br />       
+<input type="checkbox" id="Checkbox83" name="educationa[]" value="Teacher"/>Teacher<br />                   
+<input type="checkbox" id="Checkbox84" name="educationa[]" value="Tailor"/>Tailor<br />              
+<input type="checkbox" id="Checkbox85" name="educationa[]" value="Therapist" />Therapist<br />
+<input type="checkbox" id="Checkbox86" name="educationa[]" value="Social Worker"/>Social Worker<br />             
+<input type="checkbox" id="Checkbox87" name="educationa[]" value="Journalist"/>Journalist<br />          
+<input type="checkbox" id="Checkbox88" name="educationa[]" value="Volunteer"/>Volunteer<br />    
+<input type="checkbox" id="Checkbox89" name="educationa[]" value="Writer"/>Writer<br />                    
+<input type="checkbox" id="Checkbox90" name="educationa[]" value="Politician"/>Politician<br />          
+<input type="checkbox" id="Checkbox91" name="educationa[]" value="Director"/>Director<br />
+<input type="checkbox" id="Checkbox92" name="educationa[]" value="Gardner"/>Gardner<br />                   
+<input type="checkbox" id="Checkbox93" name="educationa[]" value="Cobler"/>Cobler<br />
+</div><br />              
+<input type="checkbox" id="Checkbox93" name="education91"/>other        <input type="text" name="other category" id="Text2" maxlength="40" size="30" />
+
+
+
+<br/><br /><u>Working With:</u><br/>
+<input type="checkbox" id="Checkbox94" name="educationq[]" value="Private Company"/>Private Company<br/>
+<input type="checkbox" id="Checkbox95" name="educationq[]" value="Government/Public Sector"/>Government/Public Sector<br/>
+<input type="checkbox" id="Checkbox96" name="educationq[]" value="Defense/Civil Services"/>Defense/Civil Services<br/>
+<input type="checkbox" id="Checkbox97" name="educationq[]" value="Business"/>Business<br/>
+<input type="checkbox" id="Checkbox98" name="educationq[]" value="Not Working"/>Not Working<br/>
+<br/><br/>Describe Yourself:
+<input type="text" name="describe" id="textbox99" maxlength="300" size="50" title="what kind of personality are you? eg social" class="vtip" />
+
+<br /><br /><u>General Questions:</u><br /><br />
+Do you Donate Often?<br />
+<input type="radio" checked="checked" name="a" /> Yes <input type="radio" checked="checked" name="a" /> No<br /> 
+Are you interested in meeting people whose lives have changed?<br />
+<input type="radio" checked="checked" name="z" /> Yes <input type="radio" checked="checked" name="z"  /> No<br /> 
+Are you interested in going to the NGO's and see their working?<br />
+<input type="radio" checked="checked" name="x" /> Yes <input type="radio" checked="checked"  name="x" /> No<br /> 
+Are you interested in donating your goods,time and services?<br />
+<input type="radio" checked="checked" name="c" /> Yes <input type="radio" checked="checked" name="c" /> No<br /> 
+Are you intersed in donating money?<br />
+<input type="radio" checked="checked"  name="v"/> Yes <input type="radio" checked="checked"  name="v"/> No<br /> 
+Are You associated with any NGO?<br /> 
+<input type="radio" checked="checked" name="s" /> Yes <input type="radio" checked="checked" name="s" /> No<br /> 
+How would you like to donate?<br />
+<input type="radio" checked="checked" name="f"/> At the prakalp <input type="radio" checked="checked" name="f"/> At your Place<br />
+<br /><br /> <u>Working Hours per day:</u><br />
+<input type="text" id="Text21" class="" maxlength="3" size="10" title="enter the timings eg 9am to 6pm" class="vtip" />
+<br /><br /> <u> Working days in a week:</u><br />
+<input type="text" id="Text22" class="" maxlength="100" size="50" title="type as MON to SAT" class="vtip" />
+<br /><br /> <u>When do you have free time:</u><br />
+<input type="text" id="Text5" class="" maxlength="200" size="50" title="type as 6pm to 9 pm" class="vtip"/>
+<br /><br /> <u>Anything you want to tell us:</u><br />
+<input type="text" id="Text6" class="" maxlength="200" size="50"/>
+<br /><br /> <u>Your Comments About Us:</u><br />
+<input type="text" id="101" class="" maxlength="200" size="50"/>
+<br /><br /> <u>Your Suggestions:</u><br /> 
+<input type="text" id="Text4" class="" maxlength="200" size="50" /><br /><br />
+<pre>                                        
+                                   <input type="submit" value="submit" id="11" name="button" title="Recheck your details before clicking on Submit" class="vtip" />      <input type="reset" value="reset " id="Submit1" name="button" title="Click Here to fill the form again" class="vtip""/>
+
+</pre>
+</form>
+
+</body>
+</html>

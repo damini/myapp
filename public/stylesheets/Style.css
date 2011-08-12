@@ -1,0 +1,221 @@
+
+#body1{
+margin:0px 0px 0px 0px;
+background:url("images/disha.jpeg");
+background-position:10% 10% 20% 20%
+backround-repeat:no-repeat;
+}
+
+
+<!style for slides>
+#carousel {
+	width:550px;
+	height:380px;
+	margin:0 auto;
+        align:center;
+	overflow:hidden;
+}
+#slides {
+	overflow:hidden;
+	/* fix ie overflow issue */
+	position:relative;
+	width:550px;
+	height:280px;
+        margin:0;
+	border:2px solid black;
+}
+/* remove the list styles, width : item width * total items */
+#slides ul {
+	position:relative;
+	left:0;
+	top:0;
+	list-style:none;
+	margin:0;
+	padding:0;
+        height:400px;
+	width:1500px;        			
+}
+/* width of the item, in this case I put 250x250x gif */
+
+#slides li {
+
+	width:550px;
+
+	height:300px;	
+
+	float:left;
+
+        
+}
+
+
+#slides li img {
+
+	padding:4px;
+
+        height:300px;
+        width:550px;}
+
+
+#slides li font{
+        font-size:18px;
+}
+/* Styling for prev and next buttons */
+
+#buttons {
+
+	padding:0 0 5px 0;	
+
+	float:left;
+
+}
+
+
+#buttons a {
+
+	display:block; 
+
+	width:20px; 
+
+	height:20px;
+
+	//text-indent:-999em;
+
+	//float:left;
+
+	outline:0;
+}
+
+
+a#previous {
+
+	background-image:url(images/arrow.gif) 0 -31px no-repeat;
+ 
+}
+
+
+a#previous:hover {
+
+	background-image:url(images/arrow.gif) 0 0 no-repeat;
+
+}
+
+
+a#next {
+
+	background-image:url(images/arrow.gif) -32px -31px no-repeat;
+ 
+}
+
+
+a#next:hover {
+
+	background-image:url(images/arrow.gif) -32px 0 no-repeat;
+
+}
+
+
+.clear {
+clear:both
+}
+
+
+
+
+
+<!style of pages>
+
+a									
+{ 
+text-decoration: none;
+ }
+
+ul									
+{
+display: inline; 
+list-style: none;
+ }
+/*LEVEL ONE
+*/
+ul.dropdown                         
+{ 
+position: relative;
+z-index:1;
+ }
+ul.dropdown li                      
+{ 
+font-weight: bold;
+float: left;
+zoom: 1;
+}
+ul.dropdown a:hover		            
+{ 
+color: #000; 
+}
+ul.dropdown a:active               
+{ 
+color: #ffa500;
+}
+ul.dropdown li a                    
+{ 
+display: block;
+padding: 4px 8px;
+ //border-right: 1px solid #333;
+
+color: #222; 
+}
+ul.dropdown li:last-child a         
+{ 
+border-right: none;
+} 
+/* Doesn't work in IE */
+ul.dropdown li.hover,ul.dropdown li:hover                
+{ 
+background: #F3D673; 
+color: black; 
+position: relative; 
+}
+ul.dropdown li.hover a              
+{ 
+color: black;
+ }
+/*LEVEL TWO*/
+ul.dropdown ul 						
+{ 
+width: 200px;
+ visibility: hidden;
+ position: absolute;
+ top: 100%;
+ left: 0; 
+}
+ul.dropdown ul li 
+	{ 
+font-weight: normal;
+background: burlywood;
+color: #000;									  
+border-bottom: 1px solid #ccc;
+float: none;
+}                     
+      /* IE 6 & 7 Needs Inline Block */
+ul.dropdown ul li a					
+{ 
+border-right: none;
+ width: 100%;
+ display: inline-block;
+ } 
+/* LEVEL THREE
+*/
+ul.dropdown ul ul 					
+{ 
+left: 100%;
+ top: 0;
+ }
+ul.dropdown li:hover > ul 			
+{ 
+visibility: visible;
+ }
+ul.dropdown ul li					
+{ 
+display: inline;
+ width: 100%; 
+}

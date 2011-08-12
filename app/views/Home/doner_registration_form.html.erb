@@ -1,0 +1,180 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Doner Registration Form</title>
+
+<script type="text/javascript">
+function passwordStrength(password)
+
+{
+
+        var desc = new Array();
+
+        desc[0] = "Very Weak";
+
+        desc[1] = "Weak";
+
+        desc[2] = "Better";
+
+        desc[3] = "Medium";
+
+        desc[4] = "Strong";
+
+        desc[5] = "Strongest";
+
+
+
+        var score   = 0;
+
+
+
+        //if password bigger than 6 give 1 point
+
+        if (password.length > 6) score++;
+
+
+
+        //if password has both lower and uppercase characters give 1 point      
+
+        if ( ( password.match(/[a-z]/) ) && ( password.match(/[A-Z]/) ) ) score++;
+
+
+
+        //if password has at least one number give 1 point
+
+        if (password.match(/\d+/)) score++;
+
+
+
+        //if password has at least one special caracther give 1 point
+
+        if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) score++;
+
+
+
+        //if password bigger than 12 give another 1 point
+
+        if (password.length > 12) score++;
+
+
+
+         document.getElementById("passwordDescription").innerHTML = desc[score];
+
+         document.getElementById("passwordStrength").className = "strength" + score;
+
+}
+
+
+$(function(){
+		$("#yourbutton").buttonCaptcha({
+			codeWord:5,
+			codeZone:false,
+			verifyMustBe:true,
+			verifyMustName:'codeWordReal'	
+		});
+	});
+</script>
+</head>
+
+<body>
+<div id="form1" style="text-align:left;height:250px;width:1000px;">
+<h1> Doner Registration Form</h1>
+
+
+Read the following instructions carefully:<br/>
+
+1. Complete this form to become a member.<br/>
+2. Only registered members can donate goods and services to various NGO's through this portal.<br/>
+3. This process is simple and takes a few minutes.<br/>
+4. Details are necessary for a secure donation process. They will kept confidential.<br/>
+5. You will be provided with a dashboard after the registration process is complete.<br/>
+6. The complete registration proces is carried out in two steps. The second step is creating a profile which can be conducted afterwards.<br/>
+7. Fields Marked with asterisk are mandatory.<br/>
+8. You can unsubscribe any time.<br/><br/>
+</div>
+<% form_for(@form1) do |f| %>
+<% if @form1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@form1.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @form1.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="field">
+    <label for="doner_registration_form_first_name">First name*</label>
+    <input id="doner_registration_form_first_name" name="doner_registration_form[first_name]" size="20" type="text" style=" font-style:italic;" value="type the name" title="Enter the First Name" class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/> 
+ </div>
+  <div class="field">
+    <label for="doner_registration_form_last_name">Last name*</label> 
+    <input id="doner_registration_form_last_name" name="doner_registration_form[last_name]" size="20" type="text" style=" font-style:italic;" value="type the name" title="Enter the Last Name" class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/>
+  </div>
+  <div class="field">
+    <label for="doner_registration_form_user_name">User name*</label>
+	<input id="doner_registration_form_user_name" name="doner_registration_form[user_name]" size="40" type="text" style="font-style:italic;" value="Dramesh" title="Should start with 'D'. This will be used to address you on your dashboard!" class="vtip"  onfocus="this.value = ''; this.onfocus = function () {}"/>  <input type="button" id="doner_registration_form_check_button" value="Check" title="check the availability of your user name" class="vtip"/><br/>
+    (place a 'D' before your user name)
+  </div>
+   <div class="field">
+     <label for="doner_registration_form_email">Email ID*</label> &nbsp; &nbsp; &nbsp; 
+	 <input id="doner_registration_form_email" name="doner_registration_form[email]" size="30" type="text" style="font-style:italic;" value="sample1@yahoo.com" title="Enter your working Email id" class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/>
+   </div>
+ <div class="field">
+     <label for="doner_registration_form_password">Password*</label>
+     <input id="doner_registration_form_password" name="doner_registration_form[password]" size="10" type="password" style="font-style:italic;" onkeyup="passwordStrength(this.value)" title="Enter a sutable password. Minimum of 8 characters in length"  class="vtip" onfocus="this.value = ''; this.onfocus = function () {}"/> <label for="passwordStrength">Password strength</label>
+ </div>
+ <div id="passwordDescription">Password not entered</div>     <div id="passwordStrength" class="strength0"></div>
+<br />
+<div class="field">
+     <label for="doner_registration_form_confirm_password">Confirm Password*</label>
+     <input id="doner_registration_form_confirm_password" name="doner_registration_form[confirm_password]" size="10" type="password" style=" font-style:italic;" title="Retype your password" class="vtip"/>
+</div><br/>
+<div class="field">
+<label id="doner_registration_form_label" name="doner_registration_form[label]">Click on the "<u>Are you a robot?</u>" link below to fill security code.</label>
+<label for="yourbutton" name="doner_registration_form[yourbutton]">Unlocked!</label>
+<input id="yourbutton" name="doner_registration_form[yourbutton]" type="radio" checked="true"/>
+</div>
+<input type="checkbox" checked="checked"  id="doner_registration_form_check" name="message" /> I agree to recieve updates and reminders from CONTRIBUTE FOR A CAUSE. <br/>
+
+   <b>By clicking the 'Submit' button below, I certify that I have read and agree to 
+   our <a href="termsofservice.html">Terms of Service</a>,our<a href="privacypolicy.html"> Privacy Policy </a>and <a href="communication terms of service">Communication Terms of Service</a>, and to 
+   receive account related communications from Us! electronically.</b><br/>
+                    
+
+  <div class="actions" width="50" style="float: left;" >
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input id="doner_registration_form_submit" name="commit" type="submit" value="Submit" />   
+  </div>
+<div class="field" width="50" style="float: left;"> &nbsp; &nbsp; &nbsp;<input type="reset" value="Clear" id="doner_registration_form_reset" name="button" title="click here to fill the form again" class="vtip"/></div><br/><br/>
+<div id="field">
+<label>On Submittingh the form, you will receive an e-mail in your inbox or your spam folder. 
+Click on the confirmation link to varify your email address.</label>
+</div><br/>
+
+<% end %>
+
+<div id="division4ads" style="text-align:left;height:200px;width:1000px;">
+    
+   <div id="Ad1" style="background-color:dimgray;height:200px;width:300px;float:left;">Advertisement 1
+   <img src="C:\Documents and Settings\user\My Documents\My Pictures\image3.png" height="200" width="300"/>
+   </div>
+   <div id="Ad2" style="background-color:thistle;height:200px;width:400px;float:left;">Advertisement 2
+   <img src="C:\Documents and Settings\user\My Documents\My Pictures\image2.jpg" height="190" width="400"/></div>
+   <div id="Ad3" style="background-color:rosybrown;height:200px;width:300px;float:left;">Advertisement 3
+   <img src="C:\Documents and Settings\user\My Documents\My Pictures\image4.jpg" height="190" width="300"/></div>
+    
+</div> 
+
+<div id="division5footer" style="text-align:left;height:40px;width:1000px;">
+copyright@2011DonatetoPeople.org. All Rights Reserved <a href="disclaimer"> Disclaimer</a> <a href="sitemap"> Sitemap</a>
+</div> 
+
+</div>
+
+</body>
+</html>
